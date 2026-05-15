@@ -1,0 +1,11 @@
+{
+  "name": "taskflow",
+  "version": "1.0.0",
+  "description": "Taskflow open source web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aavishkar Chaudhari",
+  "license": "MIT"
+}
