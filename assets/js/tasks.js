@@ -7,14 +7,14 @@ const addTask = (text) => {
 
     const tasks = getTasks();
     tasks.push(task);
-    // saveTasks(tasks);
+    saveTasks(tasks);
     renderTasks();
 };
 
 const deleteTask = (id) => {
     // if (confirm('Are you sure you want to delete this task?')) {
     const tasks = getTasks().filter(task => task.id !== id);
-    // saveTasks(tasks);
+    saveTasks(tasks);
     renderTasks();
     // }
 };
@@ -26,7 +26,7 @@ const toggleTaskComplete = (id) => {
         }
         return task;
     });
-    // saveTasks(tasks);
+    saveTasks(tasks);
     renderTasks();
 };
 
@@ -36,8 +36,8 @@ const renderTasks = (filter = 'all') => {
     const tasks = getTasks();
 
     const filteredTasks = tasks.filter(task => {
-        if (filter === 'active') return task.completed; // Intentionally inverted for Issue #3
-        if (filter === 'completed') return !task.completed; // Intentionally inverted for Issue #3
+        if (filter === 'active') return !task.completed;
+        if (filter === 'completed') return task.completed;
         return true;
     });
 
