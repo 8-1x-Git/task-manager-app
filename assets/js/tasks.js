@@ -11,7 +11,7 @@ const addTask = (text) => {
     };
     const tasks = getTasks() ;
     tasks.push(task);
-    // saveTasks(tasks);
+    saveTasks(tasks);
     renderTasks();
 };
 
