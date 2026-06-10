@@ -1,13 +1,17 @@
 const addTask = (text) => {
+    const testtext = text.trim() ;
+    if (!testtext) {
+        alert("Task cannot be empty");
+        return;
+    }
     const task = {
         id: Date.now(),
-        text: text,
+        text: testtext,
         completed: false
     };
-
-    const tasks = getTasks();
+    const tasks = getTasks() ;
     tasks.push(task);
-    // saveTasks(tasks);
+    saveTasks(tasks);
     renderTasks();
 };
 
