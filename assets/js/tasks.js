@@ -12,11 +12,11 @@ const addTask = (text) => {
 };
 
 const deleteTask = (id) => {
-    // if (confirm('Are you sure you want to delete this task?')) {
-    const tasks = getTasks().filter(task => task.id !== id);
-    // saveTasks(tasks);
-    renderTasks();
-    // }
+    if (window.confirm('Are you sure you want to delete this task?')) {
+        const tasks = getTasks().filter(task => task.id !== id);
+        saveTasks(tasks);
+        renderTasks();
+    }
 };
 
 const toggleTaskComplete = (id) => {
