@@ -1,16 +1,30 @@
 @media (max-width: 480px) {
-    /* Bug: Input field and add button overflow on mobile */
-    /*
-  .input-container {
-    flex-wrap: wrap;
-  }
-  
-  #task-input {
+  /* Bug: Input field and add button overflow on mobile */
+  .input-container,
+  .input-row {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
-
-  .primary-btn {
+  .input-container * ,
+  .input-row * {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  task-input,
+  .input-row input {
     width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
   }
-  */
+  .primary-btn,
+  .input-row button {
+    width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+  }
 }
+
