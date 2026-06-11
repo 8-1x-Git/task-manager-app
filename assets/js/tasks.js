@@ -30,7 +30,7 @@ const toggleTaskComplete = (id) => {
         }
         return task;
     });
-    // saveTasks(tasks);
+    saveTasks(tasks);
     renderTasks();
 };
 
@@ -40,8 +40,8 @@ const renderTasks = (filter = 'all') => {
     const tasks = getTasks();
 
     const filteredTasks = tasks.filter(task => {
-        if (filter === 'active') return task.completed; // Intentionally inverted for Issue #3
-        if (filter === 'completed') return !task.completed; // Intentionally inverted for Issue #3
+        if (filter === 'active') return !task.completed; // Intentionally inverted for Issue #3
+        if (filter === 'completed') return task.completed; // Intentionally inverted for Issue #3
         return true;
     });
 
